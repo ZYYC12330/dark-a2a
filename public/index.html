@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark A2A Demo</title>
+    <link rel="stylesheet" href="/public/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>暗林单服沙盘 · Demo</div>
+      <div id="status">Tick 0/0</div>
+      <div class="actions">
+        <button id="startBtn">Start</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel">
+        <h2>TERMINAL / ALERTS</h2>
+        <ul id="logs" class="logs"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>SPACE MAP</h2>
+        <canvas id="map" width="640" height="420"></canvas>
+        <div class="transit">
+          <h3>在途消息</h3>
+          <ul id="transitList"></ul>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>CAUSAL CHAIN</h2>
+        <ul id="causal" class="causal"></ul>
+      </section>
+    </main>
+
+    <footer class="timeline">
+      <span>关键跳转：</span>
+      <button data-jump="3">T3</button>
+      <button data-jump="8">T8</button>
+      <button data-jump="12">T12</button>
+      <span id="jumpInfo"></span>
+    </footer>
+
+    <script src="/public/app.js"></script>
+  </body>
+</html>

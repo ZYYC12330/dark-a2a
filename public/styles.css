@@ -1,0 +1,93 @@
+:root {
+  --bg: #071107;
+  --panel: #0d1a0f;
+  --line: #1f4f2f;
+  --fg: #b9ffbf;
+  --warn: #ffd95e;
+  --crit: #ff6b6b;
+  --ok: #84f2a3;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding: 10px 14px;
+}
+
+button {
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid var(--line);
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 10px;
+  padding: 10px;
+  min-height: calc(100vh - 100px);
+}
+
+.panel {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: 10px;
+}
+
+.panel h2 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.logs, .causal {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 70vh;
+  overflow: auto;
+}
+
+.logs li, .causal li, #transitList li {
+  border-bottom: 1px dashed #1b3822;
+  padding: 6px 0;
+  font-size: 12px;
+}
+
+.tag-warning { color: var(--warn); }
+.tag-critical { color: var(--crit); }
+.tag-info { color: var(--ok); }
+
+#map {
+  border: 1px solid var(--line);
+  width: 100%;
+  height: auto;
+  display: block;
+  background: radial-gradient(circle at 30% 20%, #0f2b16, #071107 70%);
+}
+
+.timeline {
+  border-top: 1px solid var(--line);
+  padding: 8px 10px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.transit h3 {
+  margin: 10px 0 6px;
+  font-size: 12px;
+}
+
+.actions { display: flex; gap: 6px; }

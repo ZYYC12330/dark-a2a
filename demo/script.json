@@ -1,0 +1,47 @@
+{
+  "seed": 20260328,
+  "ticks": 16,
+  "tickMs": 900,
+  "civs": [
+    { "id": "CivA", "name": "Void Watchers", "x": 80, "y": 120, "doctrine": { "roe": 0.75, "commBudget": 0.2 } },
+    { "id": "CivB", "name": "Helix Dominion", "x": 480, "y": 120, "doctrine": { "roe": 0.55, "commBudget": 0.4 } },
+    { "id": "CivC", "name": "Crimson Enigma", "x": 520, "y": 340, "doctrine": { "roe": 0.35, "commBudget": 0.6 } },
+    { "id": "CivD", "name": "Tester", "x": 100, "y": 340, "doctrine": { "roe": 0.65, "commBudget": 0.3 } }
+  ],
+  "events": [
+    {
+      "tick": 1,
+      "type": "spoof_message",
+      "from": "CivC",
+      "to": "CivD",
+      "payload": {
+        "text": "ceasefire_bait_v1",
+        "sigValid": false,
+        "isSpoofed": true,
+        "sourceTrust": 0.28
+      }
+    },
+    {
+      "tick": 3,
+      "type": "intercept",
+      "watcher": "CivA",
+      "from": "CivC",
+      "to": "CivD",
+      "payload": {
+        "confidence": 0.67
+      }
+    },
+    {
+      "tick": 8,
+      "type": "strike",
+      "from": "CivD",
+      "to": "CivC",
+      "payload": {
+        "reason": "high threat and spoof evidence",
+        "threat": 0.81,
+        "confidence": 0.76,
+        "exposure": 0.42
+      }
+    }
+  ]
+}
